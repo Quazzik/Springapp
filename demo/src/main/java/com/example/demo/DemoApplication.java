@@ -20,9 +20,7 @@ public class DemoApplication {
 
     private static List<User> Users = new LinkedList<>();
 
-    public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
-    }
+    public static void main(String[] args) {SpringApplication.run(DemoApplication.class, args);}
     @GetMapping("/hello")
     public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
         return String.format("Hello %s!", name);
@@ -52,9 +50,10 @@ public class DemoApplication {
                 .ifPresent(u -> {
                     var changedUser = new User();
                     changedUser.ID = userEDT.ID;
-                    changedUser.Name = ValidateString(userEDT.Name) ? u.Name : userEDT.Name;
-                    changedUser.Address = ValidateString(userEDT.Address) ? u.Address : userEDT.Address;
-                    changedUser.PassportData = ValidateString(userEDT.PassportData) ? u.PassportData : userEDT.PassportData;
+                    changedUser.Age = u.Age;
+                    changedUser.Name = !ValidateString(userEDT.Name) ? u.Name : userEDT.Name;
+                    changedUser.Address = !ValidateString(userEDT.Address) ? u.Address : userEDT.Address;
+                    changedUser.PassportData = !ValidateString(userEDT.PassportData) ? u.PassportData : userEDT.PassportData;
 
                     Users.set(Users.indexOf(u), changedUser);
                 });

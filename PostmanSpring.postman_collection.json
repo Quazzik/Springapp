@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "97057414-0812-4bc9-841a-ec2dde45b5ba",
+		"name": "PostmanSpring",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29989982"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/editUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ID\": 1,\r\n    \"Name\": \"Энди\",\r\n    \"Address\": \"Где-то\",\r\n    \"PassportData\": \"4321 321321\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/getUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/getUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"getUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/addUser",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Age\": 18,\r\n    \"Name\": \"Andy\",\r\n    \"Address\": \"Somewhere\",\r\n    \"PassportData\": \"1234 123123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/addUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"addUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
