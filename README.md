@@ -72,5 +72,4 @@
 
 Пример использования Spring для написания API находится в этом [репозитории](demo).
 
-Часть информации была взята с официального сайта фреймворка: [spring.io](https://spring.io)
-а так же со статей javarush: [Что нужно знать о Spring: история появления, ключевые модули, сравнение с Java EE](https://javarush.com/groups/posts/3546-chto-nuzhno-znatjh-o-spring-istorija-pojavlenija-kljuchevihe-moduli-sravnenie-s-java-ee), [Введение в Java EE](https://javarush.com/groups/posts/2637-vvedenie-v-java-ee)
+Часть информации была взята с официального сайта фреймворка: [spring.io](https://spring.io), а так же со статей javarush: [Что нужно знать о Spring: история появления, ключевые модули, сравнение с Java EE](https://javarush.com/groups/posts/3546-chto-nuzhno-znatjh-o-spring-istorija-pojavlenija-kljuchevihe-moduli-sravnenie-s-java-ee), [Введение в Java EE](https://javarush.com/groups/posts/2637-vvedenie-v-java-ee)
