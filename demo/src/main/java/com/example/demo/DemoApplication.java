@@ -2,13 +2,16 @@ package com.example.demo;
 import DTOs.UserDto;
 import Entity.User;
 import Services.GenerateIDService;
+import Services.UserValidationService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 import static Services.GenerateIDService.*;
+import static Services.UserValidationService.*;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 @RestController
@@ -45,19 +48,22 @@ public class DemoApplication {
     @PatchMapping("/editUser")
     public void editUser(@RequestBody User userEDT)
     {
-        var user = Users.stream().filter(x -> x.ID == userEDT.ID).findFirst();
-        if(user.isEmpty()) {
-            return;
-        }
-        if (userEDT.Name == null) userEDT.Name = Users.stream().filter(x -> x.ID == userEDT.ID).findFirst()
-        Users.set((int)userEDT.ID, userEDT);
+        findUser(Users, userEDT.ID)
+                .ifPresent(u -> {
+                    var changedUser = new User();
+                    changedUser.ID = userEDT.ID;
+                    changedUser.Name = ValidateString(userEDT.Name) ? u.Name : userEDT.Name;
+                    changedUser.Address = ValidateString(userEDT.Address) ? u.Address : userEDT.Address;
+                    changedUser.PassportData = ValidateString(userEDT.PassportData) ? u.PassportData : userEDT.PassportData;
+
+                    Users.set(Users.indexOf(u), changedUser);
+                });
     }
-    public User editUser(User user){
-        User newUser = new User();
-        var newUser = Users.stream()
-        if(user.Age != 0) newUser.Age = user.Age;
-        if(user.Name != null) newUser.Name = user.Name;
-        if(user.Address != null) newUser.Address = user.Address;
-        if(user.PassportData != null) newUser.PassportData = user.PassportData;
+    private Optional<User> findUser(List<User> users, long id){
+        var userOpt = users.stream()
+                .filter(u -> u.ID == id)
+                .findFirst();
+
+        return userOpt;
     }
 }
