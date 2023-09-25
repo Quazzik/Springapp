@@ -35,7 +35,7 @@ public class DemoApplication {
     }
 
     @PutMapping("/addUser")
-    public void AddUser(@RequestBody UserDto userDto)
+    public void addUser(@RequestBody UserDto userDto)
     {
         var newUser = new User();
         newUser.Age = userDto.Age;
