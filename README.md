@@ -54,19 +54,19 @@
 
 ## 4.Установка и использование
 Для работы со Spring необходимы:
-- IDE - среда разработки
+- IDE - среда разработки.
 - JDK - Java development kit. Набор инструментов для разработки приложений на Java, включающий в себя компилятор, отладчик и другие утилиты.
 - Apache maven - фреймворк для автоматизации сборки проектов.
 
 На сайте Spring.io можно найти quickstart guide, в котором с комментариями показан пример создания первого приложения и рекомендованные IDE.
 Одной из рекомендованных оказалась [Intellij IDEA Ultimate](https://www.jetbrains.com/ru-ru/idea/) , IDE разработанная JetBrains, подходящая для работы с Java и Kotlin. На данный момент нет способа получить студенческую или оплатить Ultimate-версию.
 Аналогами могут послужить [Spring Tools](https://spring.io/tools), [Visual Studio Сode](https://code.visualstudio.com) или [Eclipse](https://www.eclipse.org/downloads/).
-С установкой JDK так же нет никаких проблем - необходимо зайти на сайт [Oracle](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) и скачать установщик последней поддерживаемой версии JDK, на данный момент - 17
+С установкой JDK так же нет никаких проблем - необходимо зайти на сайт [Oracle](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) и скачать установщик последней поддерживаемой версии JDK, на данный момент - 17.
 Установка Maven на уровень сложнее, но всё ещё проста для рядового пользователя. Я нашел подробную инструкцию по установке на [Skillbox Manuals](https://skillbox-manuals.github.io/manuals/docs/maven-win-install/).
 - Необходимо скачать [архив](https://maven.apache.org/download.cgi) с apache maven и распаковать его в папку которая не будет удалена никогда.
-- Далее через PWSH проверяется запуск фреймворка вручную (перейти в директорию apache-maven-3.X.X/bin, после чео написать ./mvn -version). Если в PWSH видна версия maven, то всё хорошо и можно идти дальше
-- Теперь, для удобства работы, нужно добавить путь до папки bin в системную переменную PATH. Эта так же делается в PowerShell: в моём случае команда выглядела так - setx PATH "$env:PATH;C:\apache-maven-3.8.6\bin"
+- Далее через PWSH проверяется запуск фреймворка вручную (перейти в директорию apache-maven-3.X.X/bin, после чео написать ./mvn -version). Если в PWSH видна версия maven, то всё хорошо и можно идти дальше.
+- Теперь, для удобства работы, нужно добавить путь до папки bin в системную переменную PATH. Эта так же делается в PowerShell: в моём случае команда выглядела так - setx PATH "$env:PATH;C:\apache-maven-3.8.6\bin".
 
-Так же для удобства работы с API советую использовать приложение [postman](https://www.postman.com/downloads/)
+Так же работы с API наобходимо использовать приложение [postman](https://www.postman.com/downloads/).
 
-Пример использования Spring для написания API находится в этом [репозитории](demo)
+Пример использования Spring для написания API находится в этом [репозитории](demo).
